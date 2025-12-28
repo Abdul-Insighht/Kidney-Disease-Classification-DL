@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kidney Disease Classification</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:Poppins,sans-serif; }
+
+    body {
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background:linear-gradient(135deg,#667eea,#764ba2);
+    }
+
+    main {
+      width:450px;
+      padding:35px;
+      border-radius:20px;
+      background:rgba(255,255,255,.15);
+      backdrop-filter:blur(15px);
+      box-shadow:0 8px 32px rgba(0,0,0,.3);
+      color:#fff;
+    }
+
+    h1 { text-align:center; margin-bottom:20px; }
+
+    form { display:flex; flex-direction:column; gap:14px; }
+
+    input[type=file] {
+      padding:10px;
+      border-radius:10px;
+      background:rgba(255,255,255,.2);
+      border:1px solid rgba(255,255,255,.3);
+      color:white;
+    }
+
+    button {
+      padding:12px;
+      border:none;
+      border-radius:10px;
+      font-weight:600;
+      cursor:pointer;
+      background:linear-gradient(135deg,#00d2ff,#3a7bd5);
+      color:white;
+    }
+
+    /* IMAGE PREVIEW */
+    #preview-container {
+      display:none;
+      margin-top:20px;
+      position:relative;
+      text-align:center;
+    }
+
+    #preview-image {
+      max-width:100%;
+      border-radius:14px;
+    }
+
+    #overlay {
+      position:absolute;
+      bottom:10px;
+      left:50%;
+      transform:translateX(-50%);
+      background:rgba(0,0,0,.7);
+      padding:6px 14px;
+      border-radius:20px;
+      font-weight:600;
+      display:none;
+    }
+
+    /* LOADER */
+    #loader {
+      display:none;
+      margin-top:15px;
+      text-align:center;
+    }
+
+    /* CONFIDENCE BAR */
+    #bar-container {
+      display:none;
+      margin-top:15px;
+    }
+
+    #bar-bg {
+      width:100%;
+      height:14px;
+      background:#ddd;
+      border-radius:10px;
+    }
+
+    #bar {
+      height:14px;
+      width:0%;
+      background:#00d2ff;
+      border-radius:10px;
+    }
+
+    /* RESULT TEXT */
+    #result {
+      display:none;
+      margin-top:20px;
+      background:rgba(255,255,255,.15);
+      padding:15px;
+      border-radius:12px;
+    }
+
+    #error { margin-top:10px; color:#ff4d4f; text-align:center; }
+  </style>
+</head>
+
+<body>
+<main>
+
+  <h1>Kidney Disease Classification</h1>
+
+  <form id="upload-form">
+    <input type="file" id="image" accept="image/*" required>
+    <button type="submit">Predict</button>
+  </form>
+
+  <!-- IMAGE PREVIEW -->
+  <div id="preview-container">
+    <img id="preview-image">
+    <div id="overlay"></div>
+  </div>
+
+  <!-- LOADER -->
+  <div id="loader">🔍 Predicting...</div>
+
+  <!-- CONFIDENCE -->
+  <div id="bar-container">
+    <div id="bar-bg">
+      <div id="bar"></div>
+    </div>
+  </div>
+
+  <!-- RESULT -->
+  <div id="result">
+    <p><b>File:</b> <span id="filename"></span></p>
+    <p><b>Prediction:</b> <span id="prediction"></span></p>
+    <p><b>Confidence:</b> <span id="confidence"></span></p>
+  </div>
+
+  <div id="error"></div>
+
+</main>
+
+<script src="/frontend/upload.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+<!-- ------------------------------------------------- -->
+
+<!-- <!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kidney Disease Classification</title>
+
+  <link rel="stylesheet" href="frontend/styles.css" />
+</head>
+
+<body>
+  <main>
+    <h1>Kidney Disease Classification</h1>
+
+    <form id="upload-form">
+      <label for="image">Choose CT image (jpg/png):</label><br/>
+      <input type="file" id="image" name="image" accept="image/*" required /><br/><br/>
+      <button type="submit">Predict</button>
+    </form>
+
+    <section id="result" style="display:none;">
+      <h2>Result</h2>
+      <p><strong>File:</strong> <span id="filename"></span></p>
+      <p><strong>Prediction:</strong> <span id="prediction"></span></p>
+      <p><strong>Confidence:</strong> <span id="confidence"></span></p>
+    </section>
+
+    <div id="error" style="color:#b00020; font-weight: 600;"></div>
+  </main>
+
+  <script src="frontend/upload.js"></script>
+</body>
+</html> -->
+
+<!-- Updated path for CSS -->
+<!-- Updated path for JS -->
